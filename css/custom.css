@@ -1,0 +1,52 @@
+body{
+  background: #e2e1e0;
+  font-family: 'Roboto', sans-serif, Helvetica;
+}
+.myHeading{
+	background: #2196F3 !important;
+	color: #fff !important;
+	font-size: 20px;
+}
+
+.btn-primary{
+	background: #2196F3 !important; 
+	border: #2196F3 !important;
+}
+
+.modal-backdrop{
+	background: #fff !important;
+}
+.myColor{
+	color: #14568C;
+}
+
+.myForm{
+	height: 45px;
+}
+
+td{
+	padding: 20px !important;
+	font-size: 17px;
+	text-align: right;
+}
+th{
+	color: #14568C;
+	text-align: right;
+	font-size: 15px;
+}
+
+.modal-content{
+    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    -moz-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    -o-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    box-shadow: 0 5px 15px rgba(0,0,0,0);
+}
+
+.round{
+	border-radius: 50%;
+}
+
+.modal-content { 
+    overflow: auto;
+    padding-bottom: 15px;
+}
