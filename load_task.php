@@ -13,23 +13,26 @@
 	if ($res->num_rows > 0) {
 		$output .="
 			<table class='table table-responsive'>
-				<tr>
-					<th> </th>
-					<th>My Task</th>
-					<th>Status</th>
-					<th>Actions</th>
-				</tr>
-		";
+						";
 		while ($row = $res->fetch_assoc()) {
+			$status = $row['is_finished'];
+			if ($status == 1) {
+				$value = "Finished";
+				$status = "<span class='label label-success text-center'>".$value."</span>";
+			}else{
+				$value = "To do";
+				$status = "<span class='label label-default text-center'>".$value."</span>";
+			}
 			$output	.="
 				<tr>
-				<td> <input type='checkbox'> </td>
-				<td> ".$row['task_name']."
-				<td> <span class='badge text-center'> Todo </span> </td>
-				<td>
-					 <button class='btn btn-info btn-sm round'><i class='fas fa-pencil-alt'></i></button> 
-					<button class='btn btn-danger btn-sm round btnDelete' data-delete='".$row['id']."'><i class='fas fa-trash-alt'></i></button>	
-					</button> <button class='btn btn-success btn-sm round'><i class='far fa-bell'></i></button>
+				<td> <input type='checkbox' class='tasks' value=".$row['id']."> </td>
+				<td id='".$row['id']."' width='250px' class='update' data-column='task_name'> ".$row['task_name']."</td>
+				<td>".$status."</td>
+				<td> <div class='text-center'> 
+					 <button type='button' class='btn btn-info btn-sm round editTask margin'data-edit='".$row['id']."' ><i class='fas fa-pencil-alt'></i></button>  
+					<button class='btn btn-danger margin btn-sm round btnDelete' data-delete='".$row['id']."'><i class='fas fa-trash-alt'></i></button>	
+					</button>
+					</div>
 				</td>
 				</tr>
 			";						

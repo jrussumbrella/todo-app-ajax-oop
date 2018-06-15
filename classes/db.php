@@ -2,6 +2,7 @@
  
  class Db{
 
+
  	private $host = "localhost";
  	private $username = "root";
  	private $pw = "";

@@ -4,6 +4,16 @@ require_once('db.php');
 
 class Task extends Db{
 
+	protected $msg;
+
+	public function setMessage($msg){
+		 $this->msg = $msg;
+	}
+
+	public function getMessage(){
+		return $this->msg;
+	}
+
 	public function __construct(){
 		parent::__construct();
 	}
@@ -30,6 +40,34 @@ class Task extends Db{
 	public function delete($id){
 		$query = "DELETE FROM todo WHERE id = '$id' ";
 		$res = $this->con->query($query);
+		if ($res) {
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	public function deleteTasks($id){
+		foreach ($id as $i) {
+			$query = "DELETE FROM todo WHERE id = '$i' ";
+			$res = $this->con->query($query);			
+		}
+			if ($res) {
+				return true;
+			}else{
+				return false;
+			}	
+	}
+
+
+	//save multiple tasks
+	public function saveTasks($tasksId){
+		foreach ($tasksId as $taskId) {
+			$query = "UPDATE todo SET is_finished = 1 WHERE id = '$taskId'";
+			$res = $this->con->query($query);
+		}
+
+
 		if ($res) {
 			return true;
 		}else{

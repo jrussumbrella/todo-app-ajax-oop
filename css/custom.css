@@ -25,13 +25,13 @@ body{
 }
 
 td{
-	padding: 20px !important;
+	padding: 15px !important;
 	font-size: 17px;
-	text-align: right;
+	text-align: left;
 }
 th{
 	color: #14568C;
-	text-align: right;
+	text-align: center;
 	font-size: 15px;
 }
 
@@ -49,4 +49,54 @@ th{
 .modal-content { 
     overflow: auto;
     padding-bottom: 15px;
+}
+
+.right{
+	background: #fff;
+	border: transparent; 
+    overflow: auto;
+    padding-bottom: 15px;
+}
+
+.floating-button{
+ 	cursor: pointer;
+  	box-shadow: 0px 2px 5px #666;
+}
+
+#message{
+	font-size: 17px;
+	padding-bottom: 10px;
+	font-weight: 1.5em;
+}
+
+.message{
+	font-size: 17px;
+	padding-bottom: 10px;
+	font-weight: 1.5em;
+	font-weight: bold;
+}
+
+.update{
+	height: auto;
+	max-height: 50px;
+	max-width: 50px;
+}
+
+
+/* task */
+#loadTask{
+	height: 300px;
+	max-height: 300px;
+	overflow: auto;
+}
+
+.fork-image{
+	position: absolute; 
+	top: 0; 
+	right: 0; 
+	border: 0;
+}
+
+.margin{
+	margin: 5px;
 }
